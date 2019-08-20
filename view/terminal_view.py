@@ -138,8 +138,6 @@ def get_choice(title, options,exit):
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
 
-def get_choice_sub(title,options):
-
 
 def print_error_message(message):
     """
