@@ -74,9 +74,9 @@ def print_result(result, label):
         None: This function doesn't return anything it only prints to console.
     """
 
-    # your code
     print(label, end = ':')
     print(result)
+
 
 def print_menu(title, list_options, exit_message):
     """
@@ -98,11 +98,10 @@ def print_menu(title, list_options, exit_message):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-    print(title,'\n')
+    print(title, '\n')
     for k, line in enumerate(list_options, 1):
         print(f' ({k}) {line}')
     print(f' (0) {exit_message}')
-    # your code
 
 
 def get_inputs(list_labels, title):
@@ -126,7 +125,6 @@ def get_inputs(list_labels, title):
     """
     inputs = []
 
-    # your code
     print(title)
     for line in list_labels:
         ans = input(f'{line}')
@@ -135,7 +133,7 @@ def get_inputs(list_labels, title):
 
 
 def get_choice(title, options, exit_message):
-    print_menu(title,options, exit_message)
+    print_menu(title, options, exit_message)
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
 
@@ -150,6 +148,4 @@ def print_error_message(message):
         None: This function doesn't return anything it only prints to console.
     """
 
-    # your code
-
-    print('Oops! ', message)
+    print('Oops!', message)

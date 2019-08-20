@@ -13,4 +13,22 @@ def run():
         None
     """
 
-    # your code
+    file_name = "sales.csv"
+
+    title = "Sales Menu"
+    list_options = ('List', "Add", "Remove", "Update")
+    exit_message = "Back do main menu"
+
+    choice = None
+    while choice != '0':
+        choice = terminal_view.get_choice(title, list_options, exit_message)
+        if choice == '1':
+            
+        elif choice == '2':
+            pass
+        elif choice == '3':
+            pass
+        elif choice == '4':
+            pass
+        else:
+            terminal_view.print_error_message("There is no such choice.")

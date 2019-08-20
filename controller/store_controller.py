@@ -15,25 +15,22 @@ def run():
     """
 
     # your code
-    file_name = "game_test.csv"
+    file_name = "games.csv"
 
     title = "Store menu"
     list_options = ("Add", "Remove", "Update")
     exit_message = "Back do main menu"
 
-    test_list = ("1", "2", "3", "4", "5")
-    test_string = "test"
-
 
    # terminal_view.print_menu(title,list_options,exit_message)
     choice = None
     while choice != "0":
-        choice = terminal_view.get_choice(title,list_options,exit_message)
+        choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == "1":
-            store.add(test_list, test_list)
+            pass
         elif choice == "2":
-            store.remove()
+            pass
         elif choice == "3":
-            store.update()
+            pass
         else:
             terminal_view.print_error_message("There is no such choice.")
