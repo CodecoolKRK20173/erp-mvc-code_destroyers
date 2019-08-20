@@ -18,8 +18,8 @@ def run():
     file_name = "game_test.csv"
 
     title = "Store menu"
-    list_options = ("(1) Add", "(2) Remove", "(3) Update")
-    exit_message = "(0) Back do main menu"
+    list_options = ("Add", "Remove", "Update")
+    exit_message = "Back do main menu"
 
 
     terminal_view.print_menu(title,list_options,exit_message)
