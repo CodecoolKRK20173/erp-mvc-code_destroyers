@@ -2,7 +2,7 @@
 implement commonly used functions here
 """
 import random
-
+import string
 
 def generate_random(table):
     """
@@ -18,9 +18,23 @@ def generate_random(table):
     """
 
     generated = ''
-
+    first_id = table[0][0]
+    the_string=[]
+    digits='0123456789'
+    lower='abcdefghijklmnopqrstuvwxyz'
+    upper=lower.upper()
+    other='!@#$%^&*()_+-={[]}|<>'
+    for char in first_id:
+        if char.isdigit():
+            the_string.append(random.choice(digits))
+        elif char.isupper():
+            the_string.append(random.choice(upper))
+        elif char.islower():
+            the_string.append(random.choice(lower))
+        else:
+            the_string.append(random.choice(other))
     # your code
-
+    generated=''.join(the_string)
     return generated
 
 def print_line(width_list,unit_list):
