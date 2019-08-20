@@ -61,7 +61,7 @@ def update(table, id_, record):
     """
 
     # your code
-
+    
     return table
 
 
@@ -95,3 +95,4 @@ def get_average_by_manufacturer(table, manufacturer):
     """
 
     # your code
+
