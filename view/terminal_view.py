@@ -138,6 +138,8 @@ def get_choice(options):
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
 
+def get_choice_sub(title,options):
+
 def print_error_message(message):
     """
     Displays an error message (example: ``Error: @message``)
