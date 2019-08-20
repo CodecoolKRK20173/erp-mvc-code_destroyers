@@ -28,7 +28,7 @@ def run():
    # terminal_view.print_menu(title,list_options,exit_message)
     choice = None
     while choice != "0":
-        choice = terminal_view.get_choice(list_options)
+        choice = terminal_view.get_choice(title,list_options,exit_message)
         if choice == "1":
             store.add(test_list, test_list)
         elif choice == "2":

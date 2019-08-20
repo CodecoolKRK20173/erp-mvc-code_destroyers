@@ -133,12 +133,13 @@ def get_inputs(list_labels, title):
         inputs.append(ans)
     return inputs
 
-def get_choice(options):
-    print_menu("Main menu",options, "Exit program")
+def get_choice(title, options,exit):
+    print_menu(title,options,exit)
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
 
 def get_choice_sub(title,options):
+
 
 def print_error_message(message):
     """
