@@ -26,7 +26,8 @@ def add(table, record):
         list: Table with a new record
     """
     # your code
-
+    print("add")
+    pass
     return table
 
 
@@ -43,7 +44,8 @@ def remove(table, id_):
     """
 
     # your code
-
+    print("remove")
+    pass
     return table
 
 
@@ -61,7 +63,8 @@ def update(table, id_, record):
     """
 
     # your code
-
+    print("update")
+    pass
     return table
 
 
@@ -95,3 +98,4 @@ def get_average_by_manufacturer(table, manufacturer):
     """
 
     # your code
+
