@@ -23,34 +23,34 @@ def print_table(table, title_list):
         None: This function doesn't return anything it only prints to console.
     """
     # your goes code
-    if len(title_list)==len(table[0]):
-        width=[]
-        columns=len(title_list)
+    if len(title_list) == len(table[0]):
+        width = []
+        columns = len(title_list)
 
-        for k,title in enumerate(title_list):
+        for k, title in enumerate(title_list):
             width.append(len(title))
         for line in table:
-            for k,space in enumerate(line):
-                if width[k]<len(space):
-                    width[k]=len(space)
-        full_width=len(width)*2+len(width)-1
+            for k, space in enumerate(line):
+                if width[k] < len(space):
+                    width[k] = len(space)
+        full_width = len(width) * 2 + len(width) - 1
         for unit in width:
-            full_width+=unit
+            full_width += unit
         
         
-        line1=''.join(['/','-'*full_width,'\\'])
-        line3=''.join(['\\','-'*full_width,'/'])
+        line1 = ''.join(['/','-' * full_width, '\\'])
+        line3 = ''.join(['\\','-' * full_width, '/'])
         
     
         print(line1)
-        print(print_line(width,title_list))
+        print(print_line(width, title_list))
         
         for line in table:
-            for k,space in enumerate(line):
-                linex='-'*(width[k]+2)
-                print(f'|{linex}',end='')
+            for k, space in enumerate(line):
+                linex = '-' * (width[k] + 2)
+                print(f'|{linex}', end = '')
             print('|')
-            print(print_line(width,line))
+            print(print_line(width, line))
         print(line3)
 
     else:
@@ -75,7 +75,7 @@ def print_result(result, label):
     """
 
     # your code
-    print(label,end=' : ')
+    print(label, end = ':')
     print(result)
 
 def print_menu(title, list_options, exit_message):
@@ -99,8 +99,8 @@ def print_menu(title, list_options, exit_message):
         None: This function doesn't return anything it only prints to console.
     """
     print(title,'\n')
-    for k,line in enumerate(list_options,1):
-        print(f' ({k}) {line}.')
+    for k, line in enumerate(list_options, 1):
+        print(f' ({k}) {line}')
     print(f' (0) {exit_message}')
     # your code
 
@@ -129,15 +129,14 @@ def get_inputs(list_labels, title):
     # your code
     print(title)
     for line in list_labels:
-        ans=input(f'{line} : ')
+        ans = input(f'{line}')
         inputs.append(ans)
     return inputs
 
-def get_choice(title, options,exit):
-    print_menu(title,options,exit)
+def get_choice(options):
+    print_menu("Main menu", options, "Exit program")
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
-
 
 def print_error_message(message):
     """
