@@ -2,7 +2,6 @@
 implement commonly used functions here
 """
 import random
-import string
 
 def generate_random(table):
     """
@@ -19,11 +18,11 @@ def generate_random(table):
 
     generated = ''
     first_id = table[0][0]
-    the_string=[]
-    digits='0123456789'
-    lower='abcdefghijklmnopqrstuvwxyz'
-    upper=lower.upper()
-    other='!@#$%^&*()_+-={[]}|<>'
+    the_string = []
+    digits = '0123456789'
+    lower = 'abcdefghijklmnopqrstuvwxyz'
+    upper = lower.upper()
+    other = '!@#$%^&*()_+-={[]}|<>'
     for char in first_id:
         if char.isdigit():
             the_string.append(random.choice(digits))
@@ -34,17 +33,17 @@ def generate_random(table):
         else:
             the_string.append(random.choice(other))
     # your code
-    generated=''.join(the_string)
+    generated = ''.join(the_string)
     return generated
 
 def print_line(width_list,unit_list):
-    line=[]
-    for k,space in enumerate(unit_list):
-        front=((width_list[k]-len(space))//2)
+    line = []
+    for k, space in enumerate(unit_list):
+        front = ((width_list[k] - len(space)) // 2)
         line.append('|')
-        line.append(' '*(front+1))
+        line.append(' ' * (front + 1))
         line.append(space)
-        line.append(' '*(front+(width_list[k]-len(space))%2+1))
+        line.append(' ' * (front + (width_list[k] - len(space)) % 2 + 1))
     line.append('|')    
-    to_print_line=''.join(line)
+    to_print_line = ''.join(line)
     return to_print_line
