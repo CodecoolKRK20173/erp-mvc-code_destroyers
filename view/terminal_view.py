@@ -2,6 +2,7 @@
 
 
 def print_table(table, title_list):
+    from model.common import print_line
     """
     Prints table with data.
 
@@ -21,8 +22,44 @@ def print_table(table, title_list):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-
     # your goes code
+    if len(title_list)==len(table[0]):
+        width=[]
+        columns=len(title_list)
+
+        for k,title in enumerate(title_list):
+            width.append(len(title))
+        for line in table:
+            for k,space in enumerate(line):
+                if width[k]<len(space):
+                    width[k]=len(space)
+        full_width=len(width)*2+len(width)-1
+        for unit in width:
+            full_width+=unit
+        
+        
+        line1=''.join(['/','-'*full_width,'\\'])
+        line3=''.join(['\\','-'*full_width,'/'])
+        
+    
+        print(line1)
+        print(print_line(width,title_list))
+        
+        for line in table:
+            for k,space in enumerate(line):
+                linex='-'*(width[k]+2)
+                print(f'|{linex}',end='')
+            print('|')
+            print(print_line(width,line))
+        print(line3)
+
+    else:
+        print_error_message('Wrong number of titles to the table')
+        
+
+    
+
+
 
 
 def print_result(result, label):
@@ -38,7 +75,8 @@ def print_result(result, label):
     """
 
     # your code
-
+    print(label,end=' : ')
+    print(result)
 
 def print_menu(title, list_options, exit_message):
     """
@@ -60,7 +98,10 @@ def print_menu(title, list_options, exit_message):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-
+    print(title,'\n')
+    for k,line in enumerate(list_options,1):
+        print(f' ({k}) {line}.')
+    print(f' (0) {exit_message}')
     # your code
 
 
@@ -86,7 +127,10 @@ def get_inputs(list_labels, title):
     inputs = []
 
     # your code
-
+    print(title)
+    for line in list_labels:
+        ans=input(f'{line} : ')
+        inputs.append(ans)
     return inputs
 
 def get_choice(options):
@@ -106,3 +150,5 @@ def print_error_message(message):
     """
 
     # your code
+
+    print('Oops! ', message)
