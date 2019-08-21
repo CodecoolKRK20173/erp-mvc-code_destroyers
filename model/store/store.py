@@ -20,7 +20,7 @@ table = data_manager.get_table_from_file(file_name)
 
 def show_table():
     """
-    Display data from data file
+    Display data from data files
     """
 
     title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
