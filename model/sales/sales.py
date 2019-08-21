@@ -14,11 +14,15 @@ Data table structure:
 from model import data_manager
 from model import common
 
-def list_table(file_name):
+def show_table():
     """
     Display data from data file
     """
-    file_name = 'sales.csv'
+    file_name = 'model/sales/sales.csv'
+    title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales', 'Year')
+    table = data_manager.get_table_from_file(file_name)
+    
+    return table, title_list
 
 
 def add(table, record):

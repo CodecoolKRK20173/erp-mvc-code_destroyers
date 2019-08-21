@@ -23,7 +23,8 @@ def run():
     while choice != '0':
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == '1':
-            pass
+            table, title_list =  sales.show_table()
+            terminal_view.print_table(table, title_list)
         elif choice == '2':
             pass
         elif choice == '3':
