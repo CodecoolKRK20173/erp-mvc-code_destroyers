@@ -13,6 +13,16 @@ Data table structure:
 from model import data_manager
 from model import common
 
+def show_table():
+    """
+    Display data from data file
+    """
+    file_name = 'model/inventory/inventory.csv'
+    title_list = ('ID', 'Platform', 'Producer', 'Year', 'Elements')
+    table = data_manager.get_table_from_file(file_name)
+    
+    return table, title_list
+
 
 def add(table, record):
     """
