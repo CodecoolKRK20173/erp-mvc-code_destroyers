@@ -14,8 +14,7 @@ def run():
         None
     """
 
-    # your code
-    file_name = "games.csv"
+    # file_name = "games.csv"
 
     title = "Store menu"
     list_options = ("Show", "Add", "Remove", "Update")

@@ -17,8 +17,8 @@ def show_table():
     """
     Display data from data file
     """
-    file_name = 'model/inventory/inventory.py'
-    title_list = ('ID', 'Name', 'Producer', 'No. Elements', 'Availables')
+    file_name = 'model/inventory/inventory.csv'
+    title_list = ('ID', 'Platform', 'Producer', 'Year', 'Elements')
     table = data_manager.get_table_from_file(file_name)
     
     return table, title_list

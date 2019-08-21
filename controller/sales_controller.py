@@ -13,7 +13,7 @@ def run():
         None
     """
 
-    file_name = "sales.csv"
+    # file_name = "sales.csv"
 
     title = "Sales Menu"
     list_options = ('List', "Add", "Remove", "Update")
