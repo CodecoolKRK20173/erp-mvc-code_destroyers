@@ -151,3 +151,8 @@ def print_error_message(message):
     """
 
     print('Oops!', message)
+
+def get_string(title, label):
+    print(title)
+    string_ = input(label)
+    return string_

@@ -35,6 +35,9 @@ def make_record_to_add(inputs):
     for i in inputs:
         record.append(i)
     table_to_write = add(table, record)
+    #testing 
+
+    #######
 
     data_manager.write_table_to_file(file_name, table)
     
@@ -60,6 +63,11 @@ def add(table, record):
     return table
 
 
+def remove_record_from_file(id_):
+    done_table = remove(table, id_)
+    data_manager.write_table_to_file(file_name, done_table)
+
+
 def remove(table, id_):
     """
     Remove a record with a given id from the table.
@@ -73,6 +81,9 @@ def remove(table, id_):
     """
 
     # your code
+    for element in table:
+        if id_ == element[0]:
+            table.remove(element)
     return table
 
 

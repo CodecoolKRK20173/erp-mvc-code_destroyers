@@ -35,7 +35,7 @@ def run():
             inputs = terminal_view.get_inputs(list_labels, title)
             store.make_record_to_add(inputs)
         elif choice == "3":
-            pass
+            store.remove_record_from_file(terminal_view.get_string("Remove record by ID", "ID: "))
         elif choice == "4":
             pass
         else:
