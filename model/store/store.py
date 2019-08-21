@@ -14,18 +14,28 @@ from model import data_manager
 from model import common
 
 
+file_name = 'model/store/games.csv'
+table = data_manager.get_table_from_file(file_name)
+
 
 def show_table():
     """
     Display data from data file
     """
-    file_name = 'model/store/games.csv'
+
     title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
-    table = data_manager.get_table_from_file(file_name)
-    
     return table, title_list
 
 
+
+def make_record_to_add(inputs):
+    generated_id = common.generate_random(table)
+    record = []
+    record.append(generated_id)
+    for i in inputs:
+        record.append(i)
+    return record
+    
 
 
 

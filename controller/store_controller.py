@@ -20,6 +20,7 @@ def run():
     title = "Store menu"
     list_options = ("Show", "Add", "Remove", "Update")
     exit_message = "Back do main menu"
+    
 
 
    # terminal_view.print_menu(title,list_options,exit_message)
@@ -30,7 +31,10 @@ def run():
            table, title_list =  store.show_table()
            terminal_view.print_table(table, title_list)
         elif choice == "2":
-            pass
+            list_labels = ('Name', 'Studio', 'Elements', 'Sales')
+            title = "Create record in store"
+            inputs = terminal_view.get_inputs(list_labels, title)
+            store.make_record_to_add(inputs)
         elif choice == "3":
             pass
         elif choice == "4":
