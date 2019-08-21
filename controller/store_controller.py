@@ -18,7 +18,7 @@ def run():
     file_name = "games.csv"
 
     title = "Store menu"
-    list_options = ("Add", "Remove", "Update")
+    list_options = ("Show", "Add", "Remove", "Update")
     exit_message = "Back do main menu"
 
 
@@ -27,10 +27,13 @@ def run():
     while choice != "0":
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == "1":
-            pass
+           table, title_list =  store.show_table()
+           terminal_view.print_table(table, title_list)
         elif choice == "2":
             pass
         elif choice == "3":
+            pass
+        elif choice == "4":
             pass
         else:
             terminal_view.print_error_message("There is no such choice.")

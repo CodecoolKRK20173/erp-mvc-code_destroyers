@@ -23,7 +23,7 @@ def run():
     while choice != '0':
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == '1':
-            
+            pass
         elif choice == '2':
             pass
         elif choice == '3':

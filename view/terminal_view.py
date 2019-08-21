@@ -24,6 +24,8 @@ def print_table(table, title_list):
     """
     # your goes code
     if len(title_list) == len(table[0]):
+   #test_index = 1
+    #if test_index == 1:
         width = []
         columns = len(title_list)
 
