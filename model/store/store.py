@@ -34,8 +34,11 @@ def make_record_to_add(inputs):
     record.append(generated_id)
     for i in inputs:
         record.append(i)
-    return record
+    table_to_write = add(table, record)
+
+    data_manager.write_table_to_file(file_name, table)
     
+
 
 
 
@@ -52,6 +55,8 @@ def add(table, record):
         list: Table with a new record
     """
     # your code
+    table.append(record)
+   
     return table
 
 
