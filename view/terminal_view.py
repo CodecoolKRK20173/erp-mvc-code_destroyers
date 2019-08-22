@@ -129,7 +129,7 @@ def get_inputs(list_labels, title):
 
     print(title)
     for line in list_labels:
-        ans = input(f'{line}')
+        ans = input(f'{line}: ')
         inputs.append(ans)
     return inputs
 

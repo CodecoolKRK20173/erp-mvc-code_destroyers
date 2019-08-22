@@ -2,6 +2,12 @@
 implement commonly used functions here
 """
 import random
+from model import data_manager
+import controller.store_controller
+import controller.common
+from model.store import store
+
+
 
 def generate_random(table):
     """
@@ -23,6 +29,7 @@ def generate_random(table):
     lower = 'abcdefghijklmnopqrstuvwxyz'
     upper = lower.upper()
     other = '!@#$%^&*()_+-={[]}|<>'
+    
 
     for char in first_id:
         if char.isdigit():
@@ -49,3 +56,26 @@ def print_line(width_list,unit_list):
     line.append('|')    
     to_print_line = ''.join(line)
     return to_print_line
+
+def make_table(file_name): #  return to show list 
+    """
+    Display data from data file
+    """
+    table = data_manager.get_table_from_file(file_name)
+    title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
+    return table, title_list
+
+
+def make_record_to_add(inputs, file_name):
+    table = data_manager.get_table_from_file(file_name)
+    generated_id = generate_random(table)
+    record = []
+    record.append(generated_id)
+    for i in inputs:
+        record.append(i)
+    table_to_write = store.add(table, record)
+    #testing 
+
+    #######
+
+    data_manager.write_table_to_file(file_name, table_to_write)
