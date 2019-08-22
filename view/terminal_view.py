@@ -122,7 +122,7 @@ def get_inputs(list_labels, title):
 
     print(title)
     for line in list_labels:
-        ans = input(f'{line}: ')
+        ans = input(f'{line} ')
         inputs.append(ans)
     return inputs
 
@@ -130,7 +130,7 @@ def get_inputs(list_labels, title):
 def get_choice(title, options, exit_message):
 
     print_menu(title, options, exit_message)
-    inputs = get_inputs(["Please enter a number: "], "")
+    inputs = get_inputs(["Please enter a number:"], "")
     return inputs[0]
 
 def print_error_message(message):
