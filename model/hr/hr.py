@@ -65,9 +65,18 @@ def remove(table, id_):
         list: Table without specified record.
     """
 
-    # your code
+    for element in table:
+        if id_ == element[0]:
+            table.remove(element)
 
     return table
+
+
+def update_record_from_table(inputs):
+
+    record = []
+    for i in table:
+        common.send()
 
 
 def update(table, id_, record):
@@ -83,7 +92,15 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
+    new_table = []
+    for element in table:
+        if id_ == element[0]:
+            element = record
+            new_table.append(element)
+        else:
+            new_table.append(element)
+            
+    table = new_table
 
     return table
 

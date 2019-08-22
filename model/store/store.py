@@ -27,23 +27,16 @@ def show_table():
     return table, title_list
 
 
+def make_record_to_add(inputs):
 
-# def make_record_to_add(inputs):
-#     generated_id = common.generate_random(table)
-#     record = []
-#     record.append(generated_id)
-#     for i in inputs:
-#         record.append(i)
-#     table_to_write = add(table, record)
-#     #testing 
+    generated_id = common.generate_random(table)
+    record = []
+    record.append(generated_id)
+    for i in inputs:
+        record.append(i)
+    table_to_write = add(table, record)
 
-#     #######
-
-#     data_manager.write_table_to_file(file_name, table)
-    
-
-
-
+    data_manager.write_table_to_file(file_name, table)
 
 
 def add(table, record):
@@ -78,6 +71,7 @@ def remove(table, id_):
     for element in table:
         if id_ == element[0]:
             table.remove(element)
+
     return table
 
 
@@ -86,9 +80,6 @@ def update_record_from_table(inputs):
     record = []
     for i in table:
         common.send()
-    # table_to_write = update(table, record)
-
-    # data_manager.write_table_to_file(file_name, table)
 
 
 def update(table, id_, record):
@@ -104,7 +95,6 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
     new_table = []
     for element in table:
         if id_ == element[0]:
@@ -114,6 +104,7 @@ def update(table, id_, record):
             new_table.append(element)
             
     table = new_table
+    
     return table
 
 

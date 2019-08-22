@@ -22,7 +22,6 @@ def run():
     title_labels = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
     list_labels = ('Name:', 'Studio:', 'Elements:', 'Sales:')
 
-    
 
     choice = None
     while choice != "0":
@@ -32,9 +31,13 @@ def run():
         elif choice == "2":
             title = "Create record in store"
             common.fn_add(file_name, list_labels, title, store.add)
+            common.show_table(file_name, title_labels)
         elif choice == "3":
-            common.remove_record_from_file(terminal_view.get_string("ID: "), store.remove, file_name)
+            common.show_table(file_name, title_labels)
+            common.remove_record_from_file(terminal_view.get_string("ID: "), store.remove, file_name, title_labels)
         elif choice == "4":
+            common.show_table(file_name, title_labels)
             common.fn_update(file_name, list_labels, 'Update', store.update)
+            common.show_table(file_name, title_labels)
         else:
             terminal_view.print_error_message("There is no such choice.")

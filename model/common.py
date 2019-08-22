@@ -70,6 +70,7 @@ def make_table(file_name, title_list = ""): #  return to show list
 
 
 def make_record_to_add(inputs, file_name, function_):
+
     table = data_manager.get_table_from_file(file_name)
     generated_id = generate_random(table)
     record = []
@@ -81,7 +82,13 @@ def make_record_to_add(inputs, file_name, function_):
     data_manager.write_table_to_file(file_name, table_to_write)
 
 
+def model_remove(file_name, done_table):
+
+    data_manager.write_table_to_file(file_name, done_table)
+
+
 def make_update(inputs, file_name, id_, function_):
+
     table = data_manager.get_table_from_file(file_name)
     record = []
     record.append(id_)
@@ -90,7 +97,3 @@ def make_update(inputs, file_name, id_, function_):
 
     table_to_write =  function_(table, id_, record)
     data_manager.write_table_to_file(file_name, table_to_write)
-
-
-def model_remowe(file_name, done_table):
-    data_manager.write_table_to_file(file_name, done_table)

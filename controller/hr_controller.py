@@ -1,6 +1,6 @@
 # everything you'll need is imported:
-from view import terminal_view
 from model.hr import hr
+from view import terminal_view
 from controller import common
 
 def run():
@@ -28,10 +28,14 @@ def run():
             common.show_table(file_name, title_labels)
         elif choice == '2':
             title = "Create record in HR"
-            common.store_add(file_name, list_labels, title)
+            common.fn_add(file_name, list_labels, title, hr.add)
+            common.show_table(file_name, title_labels)
         elif choice == '3':
-            pass
+            common.show_table(file_name, title_labels)
+            common.remove_record_from_file(terminal_view.get_string("ID: "), hr.remove, file_name, title_labels)
         elif choice == '4':
-            pass
+            common.show_table(file_name, title_labels)
+            common.fn_update(file_name, list_labels, 'Update', hr.update)
+            common.show_table(file_name, title_labels)
         else:
             terminal_view.print_error_message("There is no such choice.")
