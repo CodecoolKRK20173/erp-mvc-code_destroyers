@@ -28,6 +28,7 @@ def run():
         if choice == '1':
             common.show_table(file_name, title_labels)
         elif choice == '2':
+            title = "Create record in inventory"
             common.fn_add(file_name, list_labels, title, inventory.add)
             common.show_table(file_name, title_labels)
         elif choice == '3':
