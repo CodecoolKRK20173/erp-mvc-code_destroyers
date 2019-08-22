@@ -13,21 +13,29 @@ def run():
         None
     """
 
+
     title = "Inventory Menu"
     list_options = ('List', "Add", "Remove", "Update")
     exit_message = "Back do main menu"
+    file_name = 'model/inventory/inventory.csv'
+    title_labels = ('ID', 'Platform', 'Producer', 'Year', 'Elements')
+    list_labels = ('Platform:', 'Producer:', 'Year:', 'Elements:')
+
 
     choice = None
     while choice != '0':
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == '1':
-            table, title_list =  inventory.show_table()
-            terminal_view.print_table(table, title_list)
+            common.show_table(file_name, title_labels)
         elif choice == '2':
-            pass
+            common.fn_add(file_name, list_labels, title, inventory.add)
+            common.show_table(file_name, title_labels)
         elif choice == '3':
-            pass
+            common.show_table(file_name, title_labels)
+            common.remove_record_from_file(terminal_view.get_string("ID: "), inventory.remove, file_name, title_labels)
         elif choice == '4':
-            pass
+            common.show_table(file_name, title_labels)
+            common.fn_update(file_name, list_labels, 'Update', inventory.update)
+            common.show_table(file_name, title_labels)
         else:
             terminal_view.print_error_message("There is no such choice.")

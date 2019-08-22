@@ -24,6 +24,7 @@ def show_table():
     """
 
     title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
+
     return table, title_list
 
 
@@ -102,9 +103,8 @@ def update(table, id_, record):
             new_table.append(element)
         else:
             new_table.append(element)
-            
     table = new_table
-    
+
     return table
 
 
