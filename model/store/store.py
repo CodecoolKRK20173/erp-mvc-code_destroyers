@@ -27,7 +27,6 @@ def show_table():
     return table, title_list
 
 
-<<<<<<< HEAD
 
 # def make_record_to_add(inputs):
 #     generated_id = common.generate_random(table)
@@ -45,18 +44,6 @@ def show_table():
 
 
 
-=======
-def make_record_to_add(inputs):
-
-    generated_id = common.generate_random(table)
-    record = []
-    record.append(generated_id)
-    for i in inputs:
-        record.append(i)
-    table_to_write = add(table, record)
-
-    data_manager.write_table_to_file(file_name, table)
->>>>>>> f5735d700ba0c7cf4d75835d3d2139be4b27d9f3
 
 
 def add(table, record):
