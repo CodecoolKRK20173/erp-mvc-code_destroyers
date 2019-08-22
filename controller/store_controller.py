@@ -20,6 +20,7 @@ def run():
     list_options = ("Show", "Add", "Remove", "Update")
     exit_message = "Back do main menu"
     file_name = 'model/store/games.csv'
+    list_labels = ('Name', 'Studio', 'Elements', 'Sales')
     
 
 
@@ -30,12 +31,11 @@ def run():
         if choice == "1":
             common.show_table(file_name)
         elif choice == "2":
-            list_labels = ('Name', 'Studio', 'Elements', 'Sales')
             title = "Create record in store"
             common.store_add(file_name, list_labels, title)
         elif choice == "3":
             store.remove_record_from_file(terminal_view.get_string("Remove record by ID", "ID: "))
         elif choice == "4":
-            pass
+            common.store_update(file_name, list_labels, 'Update')
         else:
             terminal_view.print_error_message("There is no such choice.")

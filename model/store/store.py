@@ -101,6 +101,15 @@ def update(table, id_, record):
     """
 
     # your code
+    new_table = []
+    for element in table:
+        if id_ == element[0]:
+            element = record
+            new_table.append(element)
+        else:
+            new_table.append(element)
+            
+    table = new_table
     return table
 
 

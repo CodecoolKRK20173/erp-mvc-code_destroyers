@@ -79,3 +79,14 @@ def make_record_to_add(inputs, file_name):
     #######
 
     data_manager.write_table_to_file(file_name, table_to_write)
+
+
+def make_update(inputs, file_name, id_):
+    table = data_manager.get_table_from_file(file_name)
+    record = []
+    record.append(id_)
+    for i in inputs:
+        record.append(i)
+
+    table_to_write =  store.update(table, id_, record)
+    data_manager.write_table_to_file(file_name, table_to_write)

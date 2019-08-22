@@ -16,4 +16,14 @@ def show_table(file_name):
     table, title_list  = common.make_table(file_name)
     terminal_view.print_table(table,title_list)
 
+def store_update(file_name, list_labels, title):
+    id_ =  terminal_view.get_string('Updates element', 'ID: ')
+    table, title_list = common.make_table(file_name)
+    terminal_view.print_table(table, title_list)
+    inputs = terminal_view.get_inputs(list_labels,title)
+    common.make_update(inputs,file_name,id_)
+
+
+
+
 
