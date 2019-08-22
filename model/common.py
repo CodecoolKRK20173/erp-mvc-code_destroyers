@@ -69,26 +69,26 @@ def make_table(file_name, title_list = ""): #  return to show list
     return table, title_list
 
 
-def make_record_to_add(inputs, file_name):
+def make_record_to_add(inputs, file_name, function_):
     table = data_manager.get_table_from_file(file_name)
     generated_id = generate_random(table)
     record = []
     record.append(generated_id)
     for i in inputs:
         record.append(i)
-    table_to_write = store.add(table, record)
+    table_to_write = function_(table, record)
 
     data_manager.write_table_to_file(file_name, table_to_write)
 
 
-def make_update(inputs, file_name, id_):
+def make_update(inputs, file_name, id_, function_):
     table = data_manager.get_table_from_file(file_name)
     record = []
     record.append(id_)
     for i in inputs:
         record.append(i)
 
-    table_to_write =  store.update(table, id_, record)
+    table_to_write =  function_(table, id_, record)
     data_manager.write_table_to_file(file_name, table_to_write)
 
 

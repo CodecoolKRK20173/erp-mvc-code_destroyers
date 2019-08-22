@@ -31,10 +31,10 @@ def run():
             common.show_table(file_name, title_labels)
         elif choice == "2":
             title = "Create record in store"
-            common.store_add(file_name, list_labels, title)
+            common.fn_add(file_name, list_labels, title, store.add)
         elif choice == "3":
             common.remove_record_from_file(terminal_view.get_string("ID: "), store.remove, file_name)
         elif choice == "4":
-            common.store_update(file_name, list_labels, 'Update')
+            common.fn_update(file_name, list_labels, 'Update', store.update)
         else:
             terminal_view.print_error_message("There is no such choice.")
