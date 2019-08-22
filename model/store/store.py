@@ -28,18 +28,18 @@ def show_table():
 
 
 
-def make_record_to_add(inputs):
-    generated_id = common.generate_random(table)
-    record = []
-    record.append(generated_id)
-    for i in inputs:
-        record.append(i)
-    table_to_write = add(table, record)
-    #testing 
+# def make_record_to_add(inputs):
+#     generated_id = common.generate_random(table)
+#     record = []
+#     record.append(generated_id)
+#     for i in inputs:
+#         record.append(i)
+#     table_to_write = add(table, record)
+#     #testing 
 
-    #######
+#     #######
 
-    data_manager.write_table_to_file(file_name, table)
+#     data_manager.write_table_to_file(file_name, table)
     
 
 
@@ -61,11 +61,6 @@ def add(table, record):
     table.append(record)
    
     return table
-
-
-def remove_record_from_file(id_):
-    done_table = remove(table, id_)
-    data_manager.write_table_to_file(file_name, done_table)
 
 
 def remove(table, id_):

@@ -90,3 +90,7 @@ def make_update(inputs, file_name, id_):
 
     table_to_write =  store.update(table, id_, record)
     data_manager.write_table_to_file(file_name, table_to_write)
+
+
+def model_remowe(file_name, done_table):
+    data_manager.write_table_to_file(file_name, done_table)
