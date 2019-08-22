@@ -61,7 +61,7 @@ def print_line(width_list,unit_list):
     to_print_line = ''.join(line)
     return to_print_line
 
-def make_table(file_name, title_list): #  return to show list 
+def make_table(file_name, title_list = ""): #  return to show list 
     """
     Display data from data file
     """
