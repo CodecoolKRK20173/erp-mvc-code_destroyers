@@ -16,18 +16,26 @@ def run():
     title = "Crm Menu"
     list_options = ('List', "Add", "Remove", "Update")
     exit_message = "Back do main menu"
+    file_name = 'model/crm/customers.csv'
+    title_labels = ('ID', 'Developer', 'E-mail Address', 'Elements')
+    list_labels = ('Developer:', 'E-mail Address:', 'Elements:')
+
 
     choice = None
     while choice != '0':
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == '1':
-            table, title_list =  crm.show_table()
-            terminal_view.print_table(table, title_list)
+            common.show_table(file_name, title_labels)
         elif choice == '2':
-            pass
+            title = "Create record in CRM"
+            common.fn_add(file_name, list_labels, title, crm.add)
+            common.show_table(file_name, title_labels)
         elif choice == '3':
-            pass
+            common.show_table(file_name, title_labels)
+            common.remove_record_from_file(terminal_view.get_string("ID: "), crm.remove, file_name, title_labels)
         elif choice == '4':
-            pass
+            common.show_table(file_name, title_labels)
+            common.fn_update(file_name, list_labels, 'Update', crm.update)
+            common.show_table(file_name, title_labels)
         else:
             terminal_view.print_error_message("There is no such choice.")

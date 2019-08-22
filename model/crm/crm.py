@@ -12,15 +12,31 @@ Data table structure:
 from model import data_manager
 from model import common
 
+
+file_name = 'model/crm/customers.csv'
+table = data_manager.get_table_from_file(file_name)
+
+
 def show_table():
     """
     Display data from data file
     """
-    file_name = 'model/crm/customers.csv'
-    title_list = ('ID', 'Developer', 'e-mail address', 'Elements')
-    table = data_manager.get_table_from_file(file_name)
+    
+    title_list = ('ID', 'Developer', 'E-mail Address', 'Elements')
     
     return table, title_list
+
+
+def make_record_to_add(inputs):
+
+    generated_id = common.generate_random(table)
+    record = []
+    record.append(generated_id)
+    for i in inputs:
+        record.append(i)
+    table_to_write = add(table, record)
+
+    data_manager.write_table_to_file(file_name, table)
 
 
 def add(table, record):
@@ -34,7 +50,8 @@ def add(table, record):
     Returns:
         list: Table with a new record
     """
-    # your code
+
+    table.append(record)
 
     return table
 
@@ -51,9 +68,18 @@ def remove(table, id_):
         list: Table without specified record.
     """
 
-    # your code
+    for element in table:
+        if id_ == element[0]:
+            table.remove(element)
 
     return table
+
+
+def update_record_from_table(inputs):
+
+    record = []
+    for i in table:
+        common.send()
 
 
 def update(table, id_, record):
@@ -69,7 +95,14 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
+    new_table = []
+    for element in table:
+        if id_ == element[0]:
+            element = record
+            new_table.append(element)
+        else:
+            new_table.append(element)
+    table = new_table
 
     return table
 
