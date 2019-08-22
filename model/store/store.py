@@ -20,7 +20,7 @@ table = data_manager.get_table_from_file(file_name)
 
 def show_table():
     """
-    Display data from data file
+    Display data from data files
     """
 
     title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
@@ -103,14 +103,17 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
-
+    # your code
+    new_table = []
     for element in table:
         if id_ == element[0]:
-            for i in element[1:]:
-                common.send(i)
-            # table.insert(i)
-    return table, title_list
+            element = record
+            new_table.append(element)
+        else:
+            new_table.append(element)
+            
+    table = new_table
+    return table
 
 
 # special functions:
