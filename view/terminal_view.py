@@ -22,10 +22,8 @@ def print_table(table, title_list):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-    # your goes code
+
     if len(title_list) == len(table[0]):
-   #test_index = 1
-    #if test_index == 1:
         width = []
         columns = len(title_list)
 
@@ -40,8 +38,8 @@ def print_table(table, title_list):
             full_width += unit
         
         
-        line1 = ''.join(['/','-' * full_width, '\\'])
-        line3 = ''.join(['\\','-' * full_width, '/'])
+        line1 = ''.join(['/', '-' * full_width, '\\'])
+        line3 = ''.join(['\\', '-' * full_width, '/'])
         
     
         print(line1)
@@ -58,11 +56,6 @@ def print_table(table, title_list):
     else:
         print_error_message('Wrong number of titles to the table')
         
-
-    
-
-
-
 
 def print_result(result, label):
     """
@@ -135,6 +128,7 @@ def get_inputs(list_labels, title):
 
 
 def get_choice(title, options, exit_message):
+
     print_menu(title, options, exit_message)
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
@@ -152,7 +146,10 @@ def print_error_message(message):
 
     print('Oops!', message)
 
-def get_string(title, label):
-    print(title)
-    string_ = input(label)
+def get_string(title):
+
+    string_ = input(title)
     return string_
+
+def send_text(text):
+    print(text)

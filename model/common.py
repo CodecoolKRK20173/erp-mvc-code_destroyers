@@ -2,6 +2,10 @@
 implement commonly used functions here
 """
 import random
+from view import terminal_view
+
+def send(txt):
+    terminal_view.send_text(txt)
 
 def generate_random(table):
     """
@@ -38,7 +42,7 @@ def generate_random(table):
     return generated
 
 def print_line(width_list,unit_list):
-    
+
     line = []
     for k, space in enumerate(unit_list):
         front = ((width_list[k] - len(space)) // 2)

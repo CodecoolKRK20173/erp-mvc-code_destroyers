@@ -30,13 +30,13 @@ def run():
            table, title_list =  store.show_table()
            terminal_view.print_table(table, title_list)
         elif choice == "2":
-            list_labels = ('Name', 'Studio', 'Elements', 'Sales')
+            list_labels = ('Name: ', 'Studio: ', 'Elements: ', 'Sales: ')
             title = "Create record in store"
             inputs = terminal_view.get_inputs(list_labels, title)
             store.make_record_to_add(inputs)
         elif choice == "3":
-            store.remove_record_from_file(terminal_view.get_string("Remove record by ID", "ID: "))
+            store.remove_record_from_file(terminal_view.get_string('ID: '))
         elif choice == "4":
-            pass
+            store.update_record_from_table(terminal_view.get_string('Put your ID: '))
         else:
             terminal_view.print_error_message("There is no such choice.")

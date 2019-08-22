@@ -27,23 +27,16 @@ def show_table():
     return table, title_list
 
 
-
 def make_record_to_add(inputs):
+
     generated_id = common.generate_random(table)
     record = []
     record.append(generated_id)
     for i in inputs:
         record.append(i)
     table_to_write = add(table, record)
-    #testing 
-
-    #######
 
     data_manager.write_table_to_file(file_name, table)
-    
-
-
-
 
 
 def add(table, record):
@@ -57,13 +50,14 @@ def add(table, record):
     Returns:
         list: Table with a new record
     """
-    # your code
+
     table.append(record)
    
     return table
 
 
 def remove_record_from_file(id_):
+
     done_table = remove(table, id_)
     data_manager.write_table_to_file(file_name, done_table)
 
@@ -80,11 +74,20 @@ def remove(table, id_):
         list: Table without specified record.
     """
 
-    # your code
     for element in table:
         if id_ == element[0]:
             table.remove(element)
     return table
+
+
+def update_record_from_table(inputs):
+
+    record = []
+    for i in table:
+        common.send()
+    # table_to_write = update(table, record)
+
+    # data_manager.write_table_to_file(file_name, table)
 
 
 def update(table, id_, record):
@@ -100,8 +103,14 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
-    return table
+    title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
+
+    for element in table:
+        if id_ == element[0]:
+            for i in element[1:]:
+                common.send(i)
+            # table.insert(i)
+    return table, title_list
 
 
 # special functions:
