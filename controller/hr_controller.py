@@ -13,18 +13,22 @@ def run():
         None
     """
 
-    title = "Hr Menu"
+    title = "HR Menu"
     list_options = ('List', "Add", "Remove", "Update")
     exit_message = "Back do main menu"
+    file_name = 'model/hr/persons.csv'
+    title_labels = ('ID', 'Developer', 'Year')
+    list_labels = ('Developer:', 'Year:')
+
 
     choice = None
     while choice != '0':
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == '1':
-            table, title_list =  hr.show_table()
-            terminal_view.print_table(table, title_list)
+            common.show_table(file_name, title_labels)
         elif choice == '2':
-            pass
+            title = "Create record in HR"
+            common.store_add(file_name, list_labels, title)
         elif choice == '3':
             pass
         elif choice == '4':

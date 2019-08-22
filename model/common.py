@@ -6,7 +6,11 @@ from model import data_manager
 import controller.store_controller
 import controller.common
 from model.store import store
-
+from model.hr import hr
+from model.inventory import inventory
+from model.accounting import accounting
+from model.sales import sales
+from model.crm import crm
 
 
 def generate_random(table):
@@ -45,7 +49,7 @@ def generate_random(table):
     return generated
 
 def print_line(width_list,unit_list):
-    
+
     line = []
     for k, space in enumerate(unit_list):
         front = ((width_list[k] - len(space)) // 2)
@@ -57,12 +61,11 @@ def print_line(width_list,unit_list):
     to_print_line = ''.join(line)
     return to_print_line
 
-def make_table(file_name): #  return to show list 
+def make_table(file_name, title_list): #  return to show list 
     """
     Display data from data file
     """
     table = data_manager.get_table_from_file(file_name)
-    title_list = ('ID', 'Name', 'Studio', 'Elements', 'Sales')
     return table, title_list
 
 
@@ -74,9 +77,6 @@ def make_record_to_add(inputs, file_name):
     for i in inputs:
         record.append(i)
     table_to_write = store.add(table, record)
-    #testing 
-
-    #######
 
     data_manager.write_table_to_file(file_name, table_to_write)
 

@@ -27,6 +27,7 @@ def show_table():
     return table, title_list
 
 
+<<<<<<< HEAD
 
 # def make_record_to_add(inputs):
 #     generated_id = common.generate_random(table)
@@ -44,6 +45,18 @@ def show_table():
 
 
 
+=======
+def make_record_to_add(inputs):
+
+    generated_id = common.generate_random(table)
+    record = []
+    record.append(generated_id)
+    for i in inputs:
+        record.append(i)
+    table_to_write = add(table, record)
+
+    data_manager.write_table_to_file(file_name, table)
+>>>>>>> f5735d700ba0c7cf4d75835d3d2139be4b27d9f3
 
 
 def add(table, record):
@@ -57,12 +70,21 @@ def add(table, record):
     Returns:
         list: Table with a new record
     """
-    # your code
+
     table.append(record)
    
     return table
 
 
+<<<<<<< HEAD
+=======
+def remove_record_from_file(id_):
+
+    done_table = remove(table, id_)
+    data_manager.write_table_to_file(file_name, done_table)
+
+
+>>>>>>> f5735d700ba0c7cf4d75835d3d2139be4b27d9f3
 def remove(table, id_):
     """
     Remove a record with a given id from the table.
@@ -75,11 +97,20 @@ def remove(table, id_):
         list: Table without specified record.
     """
 
-    # your code
     for element in table:
         if id_ == element[0]:
             table.remove(element)
     return table
+
+
+def update_record_from_table(inputs):
+
+    record = []
+    for i in table:
+        common.send()
+    # table_to_write = update(table, record)
+
+    # data_manager.write_table_to_file(file_name, table)
 
 
 def update(table, id_, record):
