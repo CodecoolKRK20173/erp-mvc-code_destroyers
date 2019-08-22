@@ -33,11 +33,7 @@ def run():
             title = "Create record in store"
             common.store_add(file_name, list_labels, title)
         elif choice == "3":
-<<<<<<< HEAD
             common.remove_record_from_file(terminal_view.get_string, store.remove, file_name)
-=======
-            store.remove_record_from_file(terminal_view.get_string('ID: '))
->>>>>>> f5735d700ba0c7cf4d75835d3d2139be4b27d9f3
         elif choice == "4":
             common.store_update(file_name, list_labels, 'Update')
         else:

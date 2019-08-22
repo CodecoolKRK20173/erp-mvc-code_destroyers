@@ -76,15 +76,6 @@ def add(table, record):
     return table
 
 
-<<<<<<< HEAD
-=======
-def remove_record_from_file(id_):
-
-    done_table = remove(table, id_)
-    data_manager.write_table_to_file(file_name, done_table)
-
-
->>>>>>> f5735d700ba0c7cf4d75835d3d2139be4b27d9f3
 def remove(table, id_):
     """
     Remove a record with a given id from the table.
