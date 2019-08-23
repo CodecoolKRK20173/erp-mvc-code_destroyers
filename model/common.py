@@ -44,8 +44,8 @@ def generate_random(table):
             the_string.append(random.choice(lower))
         else:
             the_string.append(random.choice(other))
-
     generated = ''.join(the_string)
+    
     return generated
 
 def print_line(width_list,unit_list):
