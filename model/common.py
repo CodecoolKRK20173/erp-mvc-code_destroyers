@@ -14,6 +14,7 @@ from model.crm import crm
 
 
 def generate_random(table):
+    from controller import common
     """
     Generates random and unique string. Used for id/key generation:
          - at least 2 special characters (except: ';'), 2 number, 2 lower and 2 upper case letter
@@ -34,19 +35,19 @@ def generate_random(table):
     upper = lower.upper()
     other = '!@#$%^&*()_+-={[]}|<>'
     
-
-    for char in first_id:
-        if char.isdigit():
-            the_string.append(random.choice(digits))
-        elif char.isupper():
-            the_string.append(random.choice(upper))
-        elif char.islower():
-            the_string.append(random.choice(lower))
-        else:
-            the_string.append(random.choice(other))
-    generated = ''.join(the_string)
-    
-    return generated
+    while True:
+        for char in first_id:
+            if char.isdigit():
+                the_string.append(random.choice(digits))
+            elif char.isupper():
+                the_string.append(random.choice(upper))
+            elif char.islower():
+                the_string.append(random.choice(lower))
+            else:
+                the_string.append(random.choice(other))
+        generated = ''.join(the_string)
+        if common.check_exist(table,generated,0)==False:
+            return generated
 
 def print_line(width_list,unit_list):
 
