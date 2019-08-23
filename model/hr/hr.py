@@ -72,13 +72,6 @@ def remove(table, id_):
     return table
 
 
-def update_record_from_table(inputs):
-
-    record = []
-    for i in table:
-        common.send()
-
-
 def update(table, id_, record):
     """
     Updates specified record in the table.

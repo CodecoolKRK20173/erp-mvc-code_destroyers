@@ -27,15 +27,21 @@ def run():
     while choice != "0":
         choice = terminal_view.get_choice(title, list_options, exit_message)
         if choice == "1":
+            terminal_view.clear()
             common.show_table(file_name, title_labels)
         elif choice == "2":
+            terminal_view.clear()
             title = "Create record in store"
+            common.show_table(file_name, title_labels)
             common.fn_add(file_name, list_labels, title, store.add)
             common.show_table(file_name, title_labels)
         elif choice == "3":
+            terminal_view.clear()
             common.show_table(file_name, title_labels)
             common.remove_record_from_file(terminal_view.get_string("ID: "), store.remove, file_name, title_labels)
+            common.show_table(file_name, title_labels)
         elif choice == "4":
+            terminal_view.clear()
             common.show_table(file_name, title_labels)
             common.fn_update(file_name, list_labels, 'Update', store.update)
             common.show_table(file_name, title_labels)
