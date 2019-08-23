@@ -1,8 +1,6 @@
 """ Terminal view module """
 from os import system
 
-def clear():
-    system('clear')
 
 def print_table(table, title_list):
     from model.common import print_line
@@ -149,10 +147,17 @@ def print_error_message(message):
 
     print('Oops!', message)
 
+
 def get_string(title):
 
     string_ = input(title)
+
     return string_
+
 
 def send_text(text):
     print(text)
+
+
+def clear():
+    system('clear')
