@@ -36,7 +36,7 @@ def run():
             common.remove_record_from_file(terminal_view.get_string("ID: "), accounting.remove, file_name, title_labels)
         elif choice == '4':
             common.show_table(file_name, title_labels)
-            common.fn_update(file_name, list_labels, 'Update', accounting.update)
-            common.show_table(file_name, title_labels)
+            if common.fn_update(file_name, list_labels, 'Update', accounting.update):
+                common.show_table(file_name, title_labels)
         else:
             terminal_view.print_error_message("There is no such choice.")

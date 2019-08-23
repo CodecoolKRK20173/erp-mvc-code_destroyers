@@ -43,7 +43,7 @@ def run():
         elif choice == "4":
             terminal_view.clear()
             common.show_table(file_name, title_labels)
-            common.fn_update(file_name, list_labels, 'Update', store.update)
-            common.show_table(file_name, title_labels)
+            if common.fn_update(file_name, list_labels, 'Update', store.update):
+                common.show_table(file_name, title_labels)
         else:
             terminal_view.print_error_message("There is no such choice.")
