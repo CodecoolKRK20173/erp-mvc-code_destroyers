@@ -38,7 +38,6 @@ def fn_update(file_name, list_labels, title, function_):
     id_ =  terminal_view.get_string('Updates element \nID: ')
     table, title_list = common.make_table(file_name, list_labels)
     if check_exist(table, id_, 0):  #check if there is the ID to update
-        terminal_view.print_table(table, title_list)
         inputs = terminal_view.get_inputs(list_labels, title)
         common.make_update(inputs, file_name, id_, function_)
         terminal_view.clear()
