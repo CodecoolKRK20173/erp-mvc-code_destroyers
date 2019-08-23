@@ -1,5 +1,8 @@
 """ Terminal view module """
+from os import system
 
+def clear():
+    system('clear')
 
 def print_table(table, title_list):
     from model.common import print_line
