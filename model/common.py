@@ -34,7 +34,7 @@ def generate_random(table):
     lower = 'abcdefghijklmnopqrstuvwxyz'
     upper = lower.upper()
     other = '!@#$%^&*()_+-={[]}|<>'
-    
+    # maybe too many possible other characters like '_' or '{'
     while True:
         for char in first_id:
             if char.isdigit():
