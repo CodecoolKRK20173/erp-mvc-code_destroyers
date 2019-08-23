@@ -26,7 +26,7 @@ def run():
     choice = None
     terminal_view.clear()
     while choice != "0":
-        choice = terminal_view.get_choice(title, list_options, exit_message)
+        choice = terminal_view.get_choice("Store menu", list_options, exit_message)
         if choice == "1":
             terminal_view.clear()
             common.show_table(file_name, title_labels)
