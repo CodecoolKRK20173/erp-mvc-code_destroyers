@@ -15,13 +15,6 @@ def show_table(file_name, title_list):
     table, title_list  = common.make_table(file_name, title_list)
     terminal_view.print_table(table,title_list)
 
-#def store_add(file_name, list_labels, title):
-#    table, title_list = common.make_table(file_name)
-#    terminal_view.print_table(table, title_list)
-#    inputs = terminal_view.get_inputs(list_labels,title)
-#    common.make_record_to_add(inputs,file_name)
-#
-
 
 def fn_add(file_name, list_labels, title, function_):
 
